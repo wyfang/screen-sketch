@@ -1,0 +1,22 @@
+第三方组件与适配说明
+
+1. skeleton-tracing
+   来源：https://github.com/LingDong-/skeleton-tracing
+   固定版本：f5dd65e2389f9311dd3c24b9a83bd852c28c49e9
+   Copyright (c) 2020 Lingdong Huang
+   许可证：MIT，全文见 Resources/ThirdParty/skeleton-tracing-LICENSE.txt
+   对应文件：Sources/SkeletonTracing.swift
+   适配：封装为静态 Swift API，移除演示入口和全局可变状态；沿用应用的细化流程；
+   修正空结果及卷积索引处理，并保留分块边界的实际端点。
+
+2. fit-curve
+   来源：https://github.com/soswow/fit-curve
+   固定版本：ac27af13e8cb17c119a9147a819eb75ab6910762
+   Copyright (c) 2014 Volker Poplawski
+   许可证：MIT，全文见 Resources/ThirdParty/fit-curve-LICENSE.txt
+   对应文件：Sources/BezierFitter.swift
+   适配：在 macOS 自带 JavaScriptCore 中嵌入 Schneider 曲线拟合 JavaScript 内核，
+   移除 CommonJS 导出并加入 Swift 调用、输入校验和曲线路径采样。
+
+上述组件的许可证与版权通知在源文件及应用资源中保留，第三方许可范围不因根目录
+LICENSE 的原创部分声明而改变。应用构建脚本将许可全文复制到应用包 Resources/ThirdParty。
